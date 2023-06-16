@@ -1,6 +1,6 @@
 import { React, useState } from "react";
 import styled from "styled-components";
-import { Select, Input, Slider, Checkbox, Row, Col } from "antd";
+import { Select, Input, Slider, Checkbox, Row, Col, Space } from "antd";
 import logo from "./img/Group 18.svg";
 import Card from "./Card";
 import Map from "./Map";
@@ -17,7 +17,7 @@ const Navbar = () => {
 
   const onSelectChange = (e) => {
     setSelect(e);
-        console.log(select);
+    console.log(select);
   };
   return (
     <>
@@ -53,6 +53,9 @@ const Navbar = () => {
                     />
                   ),
                 },
+                {
+                  label: <input type="text " />,
+                },
               ]}
             />
           </Col>
@@ -64,14 +67,14 @@ const Navbar = () => {
               options={[
                 {
                   label: (
-                    <Checkbox.Group
-                      onChange={onSelectChange}
-                    >
-                      <Checkbox value="1">1</Checkbox>
-                      <Checkbox value="2">2</Checkbox>
-                      <Checkbox value="3">3</Checkbox>
-                      <Checkbox value="4+">4+</Checkbox>
-                    </Checkbox.Group>
+                    <Space direction="vertical">
+                      <Checkbox.Group onChange={onSelectChange}>
+                        <Checkbox value="1">1</Checkbox>
+                        <Checkbox value="2">2</Checkbox>
+                        <Checkbox value="3">3</Checkbox>
+                        <Checkbox value=">=4">4+</Checkbox>
+                      </Checkbox.Group>
+                    </Space>
                   ),
                 },
               ]}
