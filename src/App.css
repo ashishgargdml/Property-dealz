@@ -1,0 +1,19 @@
+body {
+    
+  top: 0px;
+  left: 0px;
+  /* width: 1920px; */
+  height: 1366px;
+
+  /* UI Properties */
+
+  background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+
+@font-face {
+    font-family: 'SF Pro';
+    src: local('SF Pro'), 
+    url('./components/font/SFPRODISPLAYREGULAR.OTF') format('opentype');
+}

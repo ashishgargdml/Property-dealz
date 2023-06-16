@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+  <g id="Group_86" data-name="Group 86" transform="translate(-1268 -437.366)">
+    <g id="bed" transform="translate(1268.632 440.236)">
+      <path id="Shape" d="M26.993,14.627H0L2.983,9.9V1.214L4.2,0H22.8l1.215,1.214V9.9l2.982,4.722ZM13.5,7.587a32.521,32.521,0,0,1,8.084.9V2.429H5.412V8.492A32.542,32.542,0,0,1,13.5,7.587Z" transform="translate(0.055)" fill="#899494"/>
+      <path id="Path" d="M1268,458.28v2.429h2.83v3.345h2.429v-3.345h16.585v3.345h2.429v-3.345h2.83V458.28Z" transform="translate(-1268 -442.159)" fill="#899494"/>
+      <path id="Path-2" data-name="Path" d="M1288.227,446.022s-7.5-2.936-9.007-2.936-2.722.681-2.722,1.521v2.124a22.857,22.857,0,0,1,2.709-.509C1280.2,446.128,1288.227,446.022,1288.227,446.022Z" transform="translate(-1269.376 -439.698)" fill="#899494"/>
+      <path id="Path-3" data-name="Path" d="M1289.576,446.731v-2.124c0-.84-1.219-1.521-2.722-1.521s-9.008,2.936-9.008,2.936,8.027.106,9.021.2A22.85,22.85,0,0,1,1289.576,446.731Z" transform="translate(-1269.595 -439.698)" fill="#899494"/>
+    </g>
+    <rect id="Rectangle_47" data-name="Rectangle 47" width="28" height="28" transform="translate(1268 437.366)" fill="none"/>
+  </g>
+</svg>
