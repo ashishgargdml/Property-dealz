@@ -4,12 +4,13 @@ import { Select, Input, Slider, Checkbox, Row, Col, Space } from "antd";
 import logo from "./img/Group 18.svg";
 import Card from "./Card";
 import Map from "./Map";
+import { Data } from "./properties";
 
 const { Search } = Input;
 
 const Navbar = () => {
   const [search, setSearch] = useState("");
-  const [select, setSelect] = useState("");
+  const [select, setSelect] = useState([]);
 
   const handleChange = (e) => {
     setSearch(e.target.value);
@@ -19,6 +20,20 @@ const Navbar = () => {
     setSelect(e);
     console.log(select);
   };
+
+  // const searchFilter = Data?.filter((item) => item.location.toLowerCase().includes(search));
+  // const selectFilter = Data.filter((ele) => {
+  //   return select.some((val) => {return val === ele.beds});
+  // });
+
+  const newArray = Data?.filter((item) => item.location.toLowerCase().includes(search)).filter((ele) => {
+    return select.some((val) => {return val === ele.beds});
+  });
+
+  console.log("new array",newArray)
+
+const filteredData = newArray;
+
   return (
     <>
       <CheckBoxWrapper>
@@ -69,10 +84,10 @@ const Navbar = () => {
                   label: (
                     <Space direction="vertical">
                       <Checkbox.Group onChange={onSelectChange}>
-                        <Checkbox value="1">1</Checkbox>
-                        <Checkbox value="2">2</Checkbox>
-                        <Checkbox value="3">3</Checkbox>
-                        <Checkbox value=">=4">4+</Checkbox>
+                        <Checkbox value={1}>1</Checkbox>
+                        <Checkbox value={2}>2</Checkbox>
+                        <Checkbox value={3}>3</Checkbox>
+                        <Checkbox value={4}>4+</Checkbox>
                       </Checkbox.Group>
                     </Space>
                   ),
@@ -87,7 +102,7 @@ const Navbar = () => {
           <Map />
         </Col>
         <Col span={12}>
-          <Card search={search} select={select} />
+          <Card search={search} select={select} filteredData={filteredData}/>
         </Col>
       </Row>
     </>

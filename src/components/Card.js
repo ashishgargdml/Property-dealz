@@ -8,9 +8,10 @@ import dim from "./img/Group 75.svg";
 import tub from "./img/Group 73.svg";
 import Sort from "./img/Vector.svg";
 import { Data } from "./properties";
+import styled from "styled-components";
 
 
-const CardList = ({ search, select }) => {
+const CardList = ({ filteredData }) => {
   const [value, setValue] = useState(1);
   const onChange = (e) => {
     setValue(e.target.value);
@@ -28,11 +29,13 @@ const CardList = ({ search, select }) => {
     },
   ];
 
+  const dataValue = filteredData?.length>0 ? filteredData : Data;
+
   return (
     <>
       <div style={{ display: "flex", justifyContent: "space-between" }}>
         <p>
-          <strong style={{ fontSize: "20px" }}>{Data.length}</strong> Properties
+          <strong style={{ fontSize: "20px" }}>{dataValue.length}</strong> Properties
           Available
         </p>
         <Dropdown
@@ -48,12 +51,7 @@ const CardList = ({ search, select }) => {
         </Dropdown>
       </div>
       <div style={{ overflowY: "scroll", height: "800px", width: "auto" }}>
-        {Data?.filter((item) => {
-          return search.toLowerCase() === ""
-            ? item
-            : item.location.toLowerCase().includes(search);
-        })
-          .sort((a, b) =>
+        {dataValue?.sort((a, b) =>
             value === 2
               ? a.price < b.price
                 ? 1
@@ -70,6 +68,7 @@ const CardList = ({ search, select }) => {
                     width: "880px",
                     border: "1px solid #e8e8e8",
                     borderRadius: "10px",
+                    marginBottom: "10px",
                   }}
                 >
                   <Card
@@ -128,13 +127,13 @@ const CardList = ({ search, select }) => {
                         }}
                       >
                         <img alt="bedrooms" src={bed} />
-                        <p style={{ marginRight: "20px" }}>{value.beds}</p>
+                        <StyledP>{value.beds}</StyledP>
                         <img alt="tub" src={tub} />
-                        <p style={{ marginRight: "20px" }}>{value.baths}</p>
+                        <StyledP>{value.baths}</StyledP>
                         <img alt="dim" src={dim} />
-                        <p style={{ marginRight: "20px" }}>
+                        <StyledP>
                           {value.area} sq meters
-                        </p>
+                        </StyledP>
                         <h2 style={{ marginLeft: "200px" }}>₹{value.price}</h2>
                       </div>
                     </div>
@@ -150,5 +149,8 @@ const CardList = ({ search, select }) => {
     </>
   );
 };
+
+const StyledP = styled.p`
+margin-right: 14px;`;
 
 export default CardList;
